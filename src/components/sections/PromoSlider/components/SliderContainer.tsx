@@ -29,6 +29,7 @@ interface SliderContainerProps {
   showControls?: boolean;
   showPagination?: boolean;
   showInfoIcon?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   breakpoints?: Record<number, any>;
 }
 
@@ -46,10 +47,10 @@ const SliderContainer: React.FC<SliderContainerProps> = ({
 
   useEffect(() => {
     const updateScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
 
-    updateScreenSize(); 
+    updateScreenSize();
     window.addEventListener("resize", updateScreenSize);
 
     return () => {
