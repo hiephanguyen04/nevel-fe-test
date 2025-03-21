@@ -53,6 +53,9 @@ const SliderContainer: React.FC<SliderContainerProps> = ({
     updateScreenSize();
     window.addEventListener("resize", updateScreenSize);
 
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(1, 0);
+    }
     return () => {
       window.removeEventListener("resize", updateScreenSize);
     };
